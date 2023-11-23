@@ -37,3 +37,31 @@ void empilhar(Pilha * p, int x) {
     p->itens[p->tp++] = x; 
 }
 
+int tamanho(Pilha * p) {
+    return p->tp;  // Retorna o índice do topo, que é o tamanho da pilha
+}
+
+int topo(Pilha * p) {
+    if (p->tp == 0) {
+        return -1;  
+    }
+    return p->itens[p->tp-1];  
+}
+
+void imprimir(Pilha * p) {
+    int i;
+    printf("[ ");
+    for(i = 0; i < p->tp; i++) {
+        printf("%d ", p->itens[i]);  // Imprime cada elemento da pilha
+    }
+    printf("]\n");
+}
+
+void inverter3(Pilha * p) {
+    int i, f, tmp;
+    for (i = 0, f = p->tp-1; i < f; i++, f--) {
+        tmp = p->itens[i];
+        p->itens[i] = p->itens[f];
+        p->itens[f] = tmp;
+    }
+}
