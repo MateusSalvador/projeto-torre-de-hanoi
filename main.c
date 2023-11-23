@@ -67,6 +67,38 @@ int main(int argc, char const *argv[]){
     return 0;
     }
 
+void jogada(Pilha *p1, Pilha *p2, Pilha *p3) {
+    printf("\n\nQual disco mover? \n");
+    printf("Opção 1: Pino1 p/ pino2 \n");
+    printf("Opção 2: Pino1 p/ pino3 \n");
+    printf("Opção 3: Pino2 p/ pino1 \n");
+    printf("Opção 4: Pino2 p/ pino3 \n");
+    printf("Opção 5: Pino3 p/ pino1 \n");
+    printf("Opção 6: Pino3 p/ pino2\n");
+    printf("Opção 7: Sair \n");
+    
+    int opcao = 0;
+    scanf("%d", &opcao);
+    switch (opcao) {
+        case 1:
+            break;
+        case 2:
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        case 5:  
+            break;
+        case 6:
+            break;
+        case 7:
+            exit(0);
+        default:
+            printf("Por favor, insira uma opção válida.\n\n");
+    }
+}
+
 void tutorial() {
     printf("\n-------------------------TUTORIAL-------------------------\n\nA Torre de Hanói consiste numa base contendo três pinos, num dos quais estão dispostos alguns discos uns sobre os outros, por ordem crescente de diâmetro.\nO problema consiste em passar todos os discos de um pino para outro qualquer, de maneira que um disco maior nunca fique em cima de outro menor. O número de discos pode variar, o formato mais simples contém apenas três.\nObservação: Neste jogo, você deverá inserir no mínimo 3 discos e no máximo 10.");
 }
