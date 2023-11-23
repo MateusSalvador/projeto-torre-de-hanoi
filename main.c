@@ -23,11 +23,13 @@ int main(int argc, char const *argv[]){
         switch(resultado){
             /*case 1: 
                 //função para iniciar o game
-                break;
-            case 2:
-                //função que retorna o tutorial do jogo
-                printf("\n\nEstá pronto para jogar? ");
                 break;*/
+           case 2:
+                tutorial(); 
+                printf("\n\nEstá pronto para jogar? ");
+                system("PAUSE");
+                system("cls");
+                break;
             case 3:
                 SetConsoleOutputCP(CPAGE_DEFAULT);
                 return 0; 
@@ -38,4 +40,8 @@ int main(int argc, char const *argv[]){
     
     SetConsoleOutputCP(CPAGE_DEFAULT);
     return 0;
+}
+
+void tutorial() {
+    printf("\n-------------------------TUTORIAL-------------------------\n\nA Torre de Hanói consiste numa base contendo três pinos, num dos quais estão dispostos alguns discos uns sobre os outros, por ordem crescente de diâmetro.\nO problema consiste em passar todos os discos de um pino para outro qualquer, de maneira que um disco maior nunca fique em cima de outro menor. O número de discos pode variar, o formato mais simples contém apenas três.\nObservação: Neste jogo, você deverá inserir no mínimo 3 discos e no máximo 10.");
 }
