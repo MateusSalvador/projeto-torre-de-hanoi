@@ -1,3 +1,6 @@
+//Aplicando guardas de inclusão, que evitam a inclusão duplicada do mesmo arquivo de cabeçalho em um programa.
+#ifndef PILHA_H
+#define PILHA_H
 // Definição de um tipo abstrato de dados (TAD) chamado Pilha
 typedef struct pilha Pilha;
 
@@ -24,3 +27,5 @@ void imprimir(Pilha * p);
 
 // Protótipo da função para inverter a ordem dos três primeiros elementos da pilha
 void inverter3(Pilha * p);
+
+#endif
