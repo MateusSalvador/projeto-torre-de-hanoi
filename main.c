@@ -11,7 +11,7 @@ int main(int argc, char const *argv[]){
 
     SetConsoleOutputCP(CPAGE_UTF8);
     
-    printf("\tPor Breno Reboredo, Gabriel Damasio, Leoanrdo Duarte, Mateus Salvador e Yann Soares\n\n");
+    printf("\tPor Breno Reboredo, Gabriel Damasio, Leonardo Duarte, Mateus Salvador e Yann Soares\n\n");
 
     while(1){
         printf("------------ MENU INICIAL ------------\n");
@@ -49,12 +49,12 @@ int main(int argc, char const *argv[]){
     Pilha *pino2 = criar();
     Pilha *pino3 = criar();
 
-    printf("\nQuantidade de discos (mÃ­nimo 3 e no mÃ¡ximo 10): ");
+    printf("\nQuantidade de discos (mínimo 3 e no máximo 10): ");
     int disco = 0;
     scanf("%d", &disco);
     fflush(stdin);
     printf("\n");
-    printf("\n----------- INÃCIO DO JOGO -----------\n");
+    printf("\n----------- INÍCIO DO JOGO -----------\n");
 
     if (disco >= 3 && disco <= 10) {
         int i;
@@ -80,17 +80,41 @@ void jogada(Pilha *p1, Pilha *p2, Pilha *p3) {
     int opcao = 0;
     scanf("%d", &opcao);
     switch (opcao) {
-        case 1:
+       case 1:
+            mover(p1, p2);
+            imprimir(p1);
+            imprimir(p2);
+            imprimir(p3);
             break;
         case 2:
+            mover(p1, p3);
+            imprimir(p1);
+            imprimir(p2);
+            imprimir(p3);
             break;
         case 3:
+            mover(p2, p1);
+            imprimir(p1);
+            imprimir(p2);
+            imprimir(p3);
             break;
         case 4:
+            mover(p2, p3);
+            imprimir(p1);
+            imprimir(p2);
+            imprimir(p3);
             break;
-        case 5:  
+        case 5:
+            mover(p3, p1);
+            imprimir(p1);
+            imprimir(p2);
+            imprimir(p3);
             break;
         case 6:
+            mover(p3, p2);
+            imprimir(p1);
+            imprimir(p2);
+            imprimir(p3);
             break;
         case 7:
             exit(0);
@@ -98,6 +122,7 @@ void jogada(Pilha *p1, Pilha *p2, Pilha *p3) {
             printf("Por favor, insira uma opção válida.\n\n");
     }
 }
+
 
 void mover(Pilha *origem, Pilha *destino) {
     if (tamanho(origem) > 0 && (tamanho(destino) == 0 || topo(destino) > topo(origem))) {
