@@ -69,8 +69,8 @@ int main(int argc, char const *argv[]){
         }
 
         printf("--------------------------------------\n");
-		printf("ParabÃ©ns, vocÃª ganhou!\n");
-        printf("\nDeseja jogar novamente?\n Digite 1 - Sim\n Digite 2 - NÃ£o\n");
+		printf("Parabéns, você ganhou!\n");
+        printf("\nDeseja jogar novamente?\n Digite 1 - Sim\n Digite 2 - Não\n");
         int resultado2;
         scanf("%d", &resultado2);
 
@@ -100,7 +100,7 @@ void jogada(Pilha *p1, Pilha *p2, Pilha *p3) {
     printf("Opção 5: Pino3 p/ pino1 \n");
     printf("Opção 6: Pino3 p/ pino2\n");
     printf("Opção 7: Sair \n");
-    
+    printf("Opção 8: Reiniciar \n");
     int opcao = 0;
     scanf("%d", &opcao);
     switch (opcao) {
@@ -142,6 +142,12 @@ void jogada(Pilha *p1, Pilha *p2, Pilha *p3) {
             break;
         case 7:
             exit(0);
+	case 8:
+            free(p1);
+            free(p2);
+            free(p3);
+            inicio(); 
+            break;
         default:
             printf("Por favor, insira uma opção válida.\n\n");
     }
@@ -152,7 +158,7 @@ void mover(Pilha *origem, Pilha *destino) {
     if (tamanho(origem) > 0 && (tamanho(destino) == 0 || topo(destino) > topo(origem))) {
         empilhar(destino, desempilhar(origem));
     } else {
-        printf("\t\t\tJogada invÃ¡lida\n");
+        printf("\t\t\tJogada inválida\n");
     }
 }
 
