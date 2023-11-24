@@ -99,6 +99,14 @@ void jogada(Pilha *p1, Pilha *p2, Pilha *p3) {
     }
 }
 
+void mover(Pilha *origem, Pilha *destino) {
+    if (tamanho(origem) > 0 && (tamanho(destino) == 0 || topo(destino) > topo(origem))) {
+        empilhar(destino, desempilhar(origem));
+    } else {
+        printf("\t\t\tJogada invÃ¡lida\n");
+    }
+}
+
 void tutorial() {
     printf("\n-------------------------TUTORIAL-------------------------\n\nA Torre de Hanói consiste numa base contendo três pinos, num dos quais estão dispostos alguns discos uns sobre os outros, por ordem crescente de diâmetro.\nO problema consiste em passar todos os discos de um pino para outro qualquer, de maneira que um disco maior nunca fique em cima de outro menor. O número de discos pode variar, o formato mais simples contém apenas três.\nObservação: Neste jogo, você deverá inserir no mínimo 3 discos e no máximo 10.");
 }
