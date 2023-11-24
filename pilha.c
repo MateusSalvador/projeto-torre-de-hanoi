@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "Pilha.h"
+#include "pilha.h"
 
 #define TAM_MAX 100
 
