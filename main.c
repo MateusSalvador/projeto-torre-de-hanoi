@@ -63,7 +63,31 @@ int main(int argc, char const *argv[]){
         }
         inverter3(pino1);
         imprimir(pino1);
-    //Finalizando    
+
+        while (tamanho(pino3) != disco && tamanho(pino2) != disco) {
+            jogada(pino1, pino2, pino3);
+        }
+
+        printf("--------------------------------------\n");
+		printf("ParabÃ©ns, vocÃª ganhou!\n");
+        printf("\nDeseja jogar novamente?\n Digite 1 - Sim\n Digite 2 - NÃ£o\n");
+        int resultado2;
+        scanf("%d", &resultado2);
+
+        if (resultado2 == 1) {
+            free(pino1);
+            free(pino2);
+            free(pino3);
+        } else if (resultado2 == 2) {
+            exit(0);
+        } else {
+            printf("Sem resposta.");
+            exit(0);
+        }
+    } else {
+        printf("\nDisco fora da faixa permitida.\n\n");
+    }
+        
     return 0;
     }
 
