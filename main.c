@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
-#include "pilha.h" //Importa a implementação da pilha
+#include "pilha.c" //Importa a implementação da pilha
 
 int main(int argc, char const *argv[]){
     int resultado;
